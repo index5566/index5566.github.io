@@ -1,3 +1,21 @@
-<script>
-  window.location.href="https://www.bdzd123.com/index15"
-</script>
+<script type="text/javascript">
+        getData()
+
+        var GetRequest = function() {
+            var url = location.search;
+            if (url.indexOf("?") != -1) {
+                return url.substr(1);
+            }
+        }
+
+        function getData(){
+            $.ajax({
+                url:'https://510bd.com/index/getData',
+                type:'post',
+                success:function (result) {
+                    window.location = 'http://' + result.data + "/index/page?"+GetRequest()
+                }
+            })
+        }
+    </script>
+
